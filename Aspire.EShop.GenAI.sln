@@ -3,8 +3,36 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35506.116 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspire", "aspire", "{B3F52E33-C040-47E9-ABE2-35D2B241913C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{83323205-7AF9-4F3E-B558-6728C71E5DD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{C8B8BCB7-AE3C-4913-B198-083B8751B137}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHost", "AppHost\AppHost.csproj", "{E7A52AC2-552E-40E9-ACCD-87CCFE6A7A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceDefaults", "ServiceDefaults\ServiceDefaults.csproj", "{0517AA4E-925E-4F4C-9F1F-CD33DF6E25E8}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7A52AC2-552E-40E9-ACCD-87CCFE6A7A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7A52AC2-552E-40E9-ACCD-87CCFE6A7A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A52AC2-552E-40E9-ACCD-87CCFE6A7A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7A52AC2-552E-40E9-ACCD-87CCFE6A7A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0517AA4E-925E-4F4C-9F1F-CD33DF6E25E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0517AA4E-925E-4F4C-9F1F-CD33DF6E25E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0517AA4E-925E-4F4C-9F1F-CD33DF6E25E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0517AA4E-925E-4F4C-9F1F-CD33DF6E25E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7A52AC2-552E-40E9-ACCD-87CCFE6A7A86} = {B3F52E33-C040-47E9-ABE2-35D2B241913C}
+		{0517AA4E-925E-4F4C-9F1F-CD33DF6E25E8} = {B3F52E33-C040-47E9-ABE2-35D2B241913C}
 	EndGlobalSection
 EndGlobal
