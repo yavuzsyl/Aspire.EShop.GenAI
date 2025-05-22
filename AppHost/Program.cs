@@ -8,7 +8,7 @@ var postgres = builder
     .AddPostgres("postgres") //container
     .WithPgAdmin() //ui
     .WithDataVolume()
-    .WithLifetime(ContainerLifetime.Persistent); 
+    .WithLifetime(ContainerLifetime.Persistent);
 
 var catalogDb = postgres.AddDatabase(name: "catalogdb"); //only for referencing, we still need to create db 
 
