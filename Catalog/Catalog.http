@@ -1,6 +1,37 @@
-@Catalog_HostAddress = http://localhost:5109
+@Catalog_HostAddress = https://localhost:7276/products
 
-GET {{Catalog_HostAddress}}/weatherforecast/
+GET {{Catalog_HostAddress}}/
 Accept: application/json
 
 ###
+
+GET {{Catalog_HostAddress}}/100
+Accept: application/json
+
+###
+
+POST {{Catalog_HostAddress}}/
+Content-Type: application/json
+{
+  "id": 101,
+  "name": "product",
+  "description": "some product",
+  "price": 99.99,
+  "imageUrl": "product1.png"
+}
+
+###
+
+PUT {{Catalog_HostAddress}}/100
+Content-Type: application/json
+{
+  "name": "product update",
+  "description": "update product",
+  "price": 109.99,
+  "imageUrl": "product1update.png"
+}
+
+###
+
+DELETE {{Catalog_HostAddress}}/100
+Content-Type: application/json
