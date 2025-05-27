@@ -12,7 +12,7 @@ var postgres = builder
 
 var catalogDb = postgres.AddDatabase(name: "catalogdb"); //only for referencing, we still need to create db 
 
-var redis = builder
+var cache = builder
     .AddRedis("cache")
     .WithRedisInsight()
     .WithDataVolume()
@@ -27,7 +27,7 @@ var catalog = builder
 
 var basket = builder
     .AddProject<Projects.Basket>("basket")
-    .WithReference(redis)
-    .WaitFor(redis);
+    .WithReference(cache)
+    .WaitFor(cache);
 
 builder.Build().Run();
