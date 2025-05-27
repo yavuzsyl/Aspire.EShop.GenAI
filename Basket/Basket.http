@@ -1,6 +1,35 @@
-@Basket_HostAddress = http://localhost:5063
+@Basket_HostAddress = https://localhost:7036/basket
 
-GET {{Basket_HostAddress}}/weatherforecast/
+GET {{Basket_HostAddress}}/user1
 Accept: application/json
+
+###
+
+POST {{Basket_HostAddress}}/
+Content-Type: application/json
+{
+  "UserName": "user1",
+  "Items": [
+    {
+      "Quantity": 2,
+      "Color": "Blue",
+      "Price": 25.99,
+      "ProductId": 1,
+      "ProductName": "Wireless Mouse"
+    },
+    {
+      "Quantity": 2,
+      "Color": "Gray",
+      "Price": 79.99,
+      "ProductId": 2,
+      "ProductName": "Mechanical Keyboard"
+    }
+  ]
+}
+
+###
+
+DELETE {{Basket_HostAddress}}/user1
+Content-Type: application/json
 
 ###

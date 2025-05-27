@@ -13,6 +13,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.MapDefaultEndpoints();
 
+app.MapBasketEndpoints();
+
 app.UseHttpsRedirection();
 
 app.Run();
