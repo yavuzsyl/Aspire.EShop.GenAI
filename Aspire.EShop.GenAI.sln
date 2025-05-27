@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspire", "aspire", "{B3F52E33-C040-47E9-ABE2-35D2B241913C}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceDefaults", "ServiceDefaults\ServiceDefaults.csproj", "{0517AA4E-925E-4F4C-9F1F-CD33DF6E25E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog", "Catalog\Catalog.csproj", "{09B9967C-91F1-418F-A074-E83AFB97C5F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket", "Basket\Basket.csproj", "{BC195EBF-6DEF-48DF-B76B-D02E5B798DB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{09B9967C-91F1-418F-A074-E83AFB97C5F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09B9967C-91F1-418F-A074-E83AFB97C5F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09B9967C-91F1-418F-A074-E83AFB97C5F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC195EBF-6DEF-48DF-B76B-D02E5B798DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC195EBF-6DEF-48DF-B76B-D02E5B798DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC195EBF-6DEF-48DF-B76B-D02E5B798DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC195EBF-6DEF-48DF-B76B-D02E5B798DB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +47,6 @@ Global
 		{E7A52AC2-552E-40E9-ACCD-87CCFE6A7A86} = {B3F52E33-C040-47E9-ABE2-35D2B241913C}
 		{0517AA4E-925E-4F4C-9F1F-CD33DF6E25E8} = {B3F52E33-C040-47E9-ABE2-35D2B241913C}
 		{09B9967C-91F1-418F-A074-E83AFB97C5F8} = {83323205-7AF9-4F3E-B558-6728C71E5DD7}
+		{BC195EBF-6DEF-48DF-B76B-D02E5B798DB2} = {83323205-7AF9-4F3E-B558-6728C71E5DD7}
 	EndGlobalSection
 EndGlobal
