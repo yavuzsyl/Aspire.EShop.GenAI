@@ -18,17 +18,28 @@ var cache = builder
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
 
+var rabbitmq = builder
+    .AddRabbitMQ("rabbitmq")
+    .WithManagementPlugin() // ui
+    .WithDataVolume()
+    .WithLifetime(ContainerLifetime.Persistent);
+
 //projects
 
 var catalog = builder
     .AddProject<Projects.Catalog>("catalog")
     .WithReference(catalogDb)//injects cs to environment
-    .WaitFor(catalogDb);
+    .WithReference(rabbitmq)
+    .WaitFor(catalogDb)
+    .WaitFor(rabbitmq);
 
 var basket = builder
     .AddProject<Projects.Basket>("basket")
     .WithReference(cache) // connection string for redis
     .WithReference(catalog) // for service discovery http+https://localhost:xxxx
-    .WaitFor(cache);
+    .WithReference(rabbitmq)
+    .WaitFor(cache)
+    .WaitFor(rabbitmq);
+
 
 builder.Build().Run();
