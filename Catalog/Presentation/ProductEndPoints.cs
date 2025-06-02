@@ -14,6 +14,14 @@ public static class ProductEndpoints
         .WithName("GetAll")
         .Produces<List<Product>>(StatusCodes.Status200OK);
 
+        group.MapPost("/list", async (GetProductsByIdsRequest request, ProductQueries query) =>
+        {
+            var products = await query.GetByIdsAsync(request.ids);
+            return Results.Ok(products);
+        })
+        .WithName("GetAllByIds")
+        .Produces<List<Product>>(StatusCodes.Status200OK);
+
         group.MapGet("/{id}", async (int id, ProductQueries query) =>
         {
             var product = await query.GetByIdAsync(id);

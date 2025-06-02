@@ -7,6 +7,10 @@ builder.AddRedisDistributedCache(connectionName: "cache");// ConnectionStrings__
 
 builder.Services.AddScoped<BasketCommands>();
 builder.Services.AddScoped<BasketQueries>();
+builder.Services.AddHttpClient<CatalogApiClient>(client =>
+{
+    client.BaseAddress = new("http+https://catalog");
+});
 
 var app = builder.Build();
 

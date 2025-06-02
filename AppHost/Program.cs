@@ -27,7 +27,8 @@ var catalog = builder
 
 var basket = builder
     .AddProject<Projects.Basket>("basket")
-    .WithReference(cache)
+    .WithReference(cache) // connection string for redis
+    .WithReference(catalog) // for service discovery http+https://localhost:xxxx
     .WaitFor(cache);
 
 builder.Build().Run();

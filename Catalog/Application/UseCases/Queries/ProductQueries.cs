@@ -6,4 +6,6 @@ public class ProductQueries(ProductDbContext context)
         await context.Products.ToListAsync();
     public async Task<Product?> GetByIdAsync(int id) =>
          await context.Products.FindAsync(id);
+    public async Task<List<Product>?> GetByIdsAsync(List<int> ids) =>
+     await context.Products.Where(p=> ids.Contains(p.Id)).ToListAsync();
 }
