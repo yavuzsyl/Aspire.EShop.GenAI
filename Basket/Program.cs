@@ -12,6 +12,8 @@ builder.Services.AddHttpClient<CatalogApiClient>(client =>
     client.BaseAddress = new("http+https://catalog");
 });
 
+builder.Services.AddMassTransitWithAssemblies(Assembly.GetExecutingAssembly());
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

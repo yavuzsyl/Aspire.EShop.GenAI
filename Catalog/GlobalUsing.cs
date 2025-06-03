@@ -5,3 +5,5 @@ global using Catalog.Application.UseCases.Commands;
 global using Catalog.Application.UseCases.Queries;
 global using Catalog.Presentation;
 global using Catalog.Presentation.Contracts;
+global using System.Reflection;
+global using Shared.Bus;

@@ -8,6 +8,9 @@ builder.AddNpgsqlDbContext<ProductDbContext>(connectionName: "catalogdb");
 builder.Services.AddScoped<ProductCommands>();
 builder.Services.AddScoped<ProductQueries>();
 
+builder.Services.AddMassTransitWithAssemblies(Assembly.GetExecutingAssembly());
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
