@@ -15,8 +15,8 @@ in the `Catalog` project.
 
 ---
 
-## Aspire Dashboard Resources
+## Resources
 
-![image](https://github.com/user-attachments/assets/a950ee36-7f91-4de0-ae91-603ace240c41)
+![image](https://github.com/user-attachments/assets/bea504e5-9037-456c-aad0-8fdd5135c2e2)
 
 ---
