@@ -33,12 +33,12 @@ Content-Type: application/json
 
 ###
 
-PUT {{Catalog_HostAddress}}/100
+PUT {{Catalog_HostAddress}}/1
 Content-Type: application/json
 {
   "name": "product update",
   "description": "update product",
-  "price": 109.99,
+  "price": 209.99,
   "imageUrl": "product1update.png"
 }
 

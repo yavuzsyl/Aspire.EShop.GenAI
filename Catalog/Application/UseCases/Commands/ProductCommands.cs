@@ -22,7 +22,7 @@ public class ProductCommands(ProductDbContext context, IBus bus)
         context.Products.Update(currentProduct);
         await context.SaveChangesAsync();
 
-        if (hasPriceChanged) return;
+        if (!hasPriceChanged) return;
 
         var priceChangedEvent = new ProductPriceChangedEvent
         {

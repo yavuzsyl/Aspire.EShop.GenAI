@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace Basket.Application.UseCases.Commands;
 
-public class BasketCommands(IDistributedCache cache, CatalogApiClient catalogApiClient)
+public class BasketCommands(IDistributedCache cache, CatalogApiClient catalogApiClient, BasketQueries query)
 {
     public async Task Update(ShoppingCart cart)
     {
@@ -20,4 +20,15 @@ public class BasketCommands(IDistributedCache cache, CatalogApiClient catalogApi
         await cache.SetStringAsync(cart.UserName, JsonSerializer.Serialize(cart));
     }
     public async Task Delete(string userName) => await cache.RemoveAsync(userName);
+
+    public async Task UpdateBasketItemProductPrice(int productId, decimal price)
+    {
+        var basket = await query.Get("user1"); // for demo purpose
+        var item = basket!.Items.FirstOrDefault(i => i.ProductId == productId);
+        if (item is null) return;
+
+        item.Price = price;
+        await cache.SetStringAsync(basket.UserName, JsonSerializer.Serialize(basket));
+
+    }
 }
