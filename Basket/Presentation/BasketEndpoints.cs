@@ -4,7 +4,7 @@ public static class BasketEndpoints
 {
     public static void MapBasketEndpoints(this IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("basket");
+        var group = app.MapGroup("basket").RequireAuthorization();
 
         group.MapGet("/{userName}", async (string userName, BasketQueries query) =>
         {

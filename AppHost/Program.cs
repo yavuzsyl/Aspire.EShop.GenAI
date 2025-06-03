@@ -24,6 +24,11 @@ var rabbitmq = builder
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent);
 
+var keycloak = builder
+    .AddKeycloak("keycloak", 8080)
+    .WithDataVolume()
+    .WithLifetime(ContainerLifetime.Persistent);
+
 //projects
 
 var catalog = builder
@@ -38,8 +43,10 @@ var basket = builder
     .WithReference(cache) // connection string for redis
     .WithReference(catalog) // for service discovery http+https://localhost:xxxx
     .WithReference(rabbitmq)
+    .WithReference(keycloak)
     .WaitFor(cache)
-    .WaitFor(rabbitmq);
+    .WaitFor(rabbitmq)
+    .WaitFor(keycloak);
 
 
 builder.Build().Run();
