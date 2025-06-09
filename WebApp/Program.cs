@@ -1,9 +1,15 @@
+using WebApp.ApiClients;
 using WebApp.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.AddServiceDefaults();
+
+builder.Services.AddHttpClient<CatalogApiClient>(client =>
+{
+    client.BaseAddress = new("https+http://catalog");//service discovery
+});
 
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
