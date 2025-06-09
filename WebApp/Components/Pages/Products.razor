@@ -1,8 +1,7 @@
 ﻿@page "/products"
-
 @inject CatalogApiClient CatalogApiClient
-
 @attribute [StreamRendering]
+@attribute [OutputCache(Duration = 5)]
 
 <PageTitle>Products</PageTitle>
 
