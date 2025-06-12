@@ -10,6 +10,8 @@ builder.Services.AddScoped<ProductQueries>();
 
 builder.Services.AddMassTransitWithAssemblies(Assembly.GetExecutingAssembly());
 
+builder.AddOllamaApiClient("ollama-llama3-2")
+       .AddChatClient();
 
 var app = builder.Build();
 
