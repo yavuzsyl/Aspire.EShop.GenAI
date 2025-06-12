@@ -46,3 +46,9 @@ Content-Type: application/json
 
 DELETE {{Catalog_HostAddress}}/100
 Content-Type: application/json
+
+###
+
+
+GET {{Catalog_HostAddress}}/support/hi-there
+Accept: application/json
