@@ -40,12 +40,17 @@ if (builder.ExecutionContext.IsRunMode)
 }
 
 var ollama = builder
-    .AddOllama("ollama", 11435)
+    .AddOllama("ollama", 11434)
     .WithDataVolume()
     .WithLifetime(ContainerLifetime.Persistent)
     .WithOpenWebUI();
 
 var llama = ollama.AddModel("llama3.2");
+
+
+// We will generate dense vector embeddings by using all-minilm model and
+// we will save these vectors in a vector database and perform semantic search by comparing a query’s embedding to them.
+var embedding = ollama.AddModel("all-minilm");
 
 //projects
 
@@ -54,9 +59,11 @@ var catalog = builder
     .WithReference(catalogDb)//injects cs to environment
     .WithReference(rabbitmq)
     .WithReference(llama)
+    .WithReference(embedding)
     .WaitFor(catalogDb)
     .WaitFor(rabbitmq)
-    .WaitFor(llama);
+    .WaitFor(llama)
+    .WaitFor(embedding);
 
 var basket = builder
     .AddProject<Projects.Basket>("basket")
