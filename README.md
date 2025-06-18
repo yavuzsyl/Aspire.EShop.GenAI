@@ -43,6 +43,12 @@ azd up     # Provision Azure resources and deploy the solution
 azd down   # Destroy all Azure resources created by 'azd up'
 ```
 
+## AI Integration with Ollama
+- Used Ollama to run AI models locally
+- Integrated llama3:2 to provide support chat capabilities.
+- Integrated all-minilm to generate vector embeddings for semantic search features.
+
+
 ---
 
 ## Resources
