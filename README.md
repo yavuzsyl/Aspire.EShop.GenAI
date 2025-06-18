@@ -47,6 +47,6 @@ azd down   # Destroy all Azure resources created by 'azd up'
 
 ## Resources
 
-![image](https://github.com/user-attachments/assets/2d1048bf-95d4-479e-825c-f23f6f2acba2)
+![image](https://github.com/user-attachments/assets/af5fdf1b-a2b5-496d-9fad-f333ce686438)
 
 ---
