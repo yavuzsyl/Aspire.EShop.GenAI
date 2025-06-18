@@ -47,8 +47,20 @@ Content-Type: application/json
 DELETE {{Catalog_HostAddress}}/100
 Content-Type: application/json
 
-###
+### ai chat
 
 
 GET {{Catalog_HostAddress}}/support/hi-there
+Accept: application/json
+
+###
+
+
+GET {{Catalog_HostAddress}}/search/mouse
+Accept: application/json
+
+### ai search
+
+
+GET {{Catalog_HostAddress}}/semantic-search/i-need-gaming-tools
 Accept: application/json

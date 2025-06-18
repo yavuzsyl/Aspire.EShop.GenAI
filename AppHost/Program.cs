@@ -46,8 +46,6 @@ var ollama = builder
     .WithOpenWebUI();
 
 var llama = ollama.AddModel("llama3.2");
-
-
 // We will generate dense vector embeddings by using all-minilm model and
 // we will save these vectors in a vector database and perform semantic search by comparing a query’s embedding to them.
 var embedding = ollama.AddModel("all-minilm");
