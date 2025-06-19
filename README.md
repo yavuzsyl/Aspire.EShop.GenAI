@@ -21,7 +21,6 @@ in the `Catalog` project.
 
 - **Azure subscription** (e.g., Free Trial)  
 - **`azd` CLI** installed locally  
-- A **.NET Aspire** solution with container-based microservices
 
 ### Authenticate & Verify CLI
 
