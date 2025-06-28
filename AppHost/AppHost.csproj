@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiGateways\YarpApiGateway\YarpApiGateway.csproj" />
     <ProjectReference Include="..\Basket\Basket.csproj" />
     <ProjectReference Include="..\Catalog\Catalog.csproj" />
     <ProjectReference Include="..\WebApp\WebApp.csproj" />

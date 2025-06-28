@@ -47,7 +47,7 @@ var ollama = builder
 
 var llama = ollama.AddModel("llama3.2");
 // We will generate dense vector embeddings by using all-minilm model and
-// we will save these vectors in a vector database and perform semantic search by comparing a query’s embedding to them.
+// we will save these vectors in a vector database and perform semantic search by comparing a queryâ€™s embedding to them.
 var embedding = ollama.AddModel("all-minilm");
 
 //projects
@@ -83,5 +83,11 @@ builder.AddProject<Projects.WebApp>("webapp")
     .WaitFor(basket);
 
 
+var gateway = builder.AddProject<Projects.YarpApiGateway>("yarpapigateway")
+    .WithReference(basket)
+    .WithReference(catalog)
+    .WaitFor(basket)
+    .WaitFor(catalog)
+    .WithExternalHttpEndpoints();
 
 builder.Build().Run();
