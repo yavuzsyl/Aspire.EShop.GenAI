@@ -21,7 +21,6 @@ in the `Catalog` project.
 
 - **Azure subscription** (e.g., Free Trial)  
 - **`azd` CLI** installed locally  
-- A **.NET Aspire** solution with container-based microservices
 
 ### Authenticate & Verify CLI
 
@@ -42,6 +41,12 @@ azd up     # Provision Azure resources and deploy the solution
 ```bash
 azd down   # Destroy all Azure resources created by 'azd up'
 ```
+
+## AI Integration with Ollama
+- Used Ollama to run AI models locally
+- Integrated llama3:2 to provide support chat capabilities.
+- Integrated all-minilm to generate vector embeddings for semantic search features.
+
 
 ---
 
