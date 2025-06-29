@@ -8,7 +8,7 @@ builder.AddServiceDefaults();
 
 builder.Services.AddHttpClient<CatalogApiClient>(client =>
 {
-    client.BaseAddress = new("https+http://catalog");//service discovery
+    client.BaseAddress = new("https+http://yarpapigateway");//service discovery
 });
 
 builder.AddRedisOutputCache("cache");

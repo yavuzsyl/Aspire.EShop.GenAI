@@ -73,21 +73,17 @@ var basket = builder
     .WaitFor(rabbitmq)
     .WaitFor(keycloak);
 
-
-builder.AddProject<Projects.WebApp>("webapp")
-    .WithExternalHttpEndpoints() // expose the app 
-    .WithReference(cache)
-    .WithReference(catalog)
-    .WithReference(basket)
-    .WaitFor(catalog)
-    .WaitFor(basket);
-
-
 var gateway = builder.AddProject<Projects.YarpApiGateway>("yarpapigateway")
     .WithReference(basket)
     .WithReference(catalog)
     .WaitFor(basket)
     .WaitFor(catalog)
     .WithExternalHttpEndpoints();
+
+builder.AddProject<Projects.WebApp>("webapp")
+    .WithExternalHttpEndpoints() // expose the app 
+    .WithReference(cache)
+    .WithReference(gateway)
+    .WaitFor(gateway);
 
 builder.Build().Run();
